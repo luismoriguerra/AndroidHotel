@@ -11,4 +11,7 @@
 	     <item >Buenos</item>
 	     <item >Malo</item>
 	 </string-array>
+	 
+	 <string name="msg_yes">si</string>
+	 <string name="msg_no">No</string>
 </resources>

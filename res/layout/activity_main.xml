@@ -40,6 +40,14 @@
          	    android:entries="@array/array_rate"
          	         />
         </LinearLayout>
+        <ToggleButton 
+            android:id="@+id/toogle_recommendation"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textOn="@string/msg_yes"
+            android:textOff="@string/msg_no"
+            android:onClick="toggleClicked"
+            />
          
      </LinearLayout>
      

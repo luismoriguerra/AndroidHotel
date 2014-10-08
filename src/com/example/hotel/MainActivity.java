@@ -5,13 +5,19 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends Activity {
 	
 	private boolean favorite  = false;
+	
+	public void toggleClicked(View v){
+		Log.e("TAG", "toggle");
+	}
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
