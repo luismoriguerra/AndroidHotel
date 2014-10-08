@@ -14,4 +14,8 @@
 	 
 	 <string name="msg_yes">si</string>
 	 <string name="msg_no">No</string>
+	 <string-array name="dialog_options">
+	     <item >si</item>
+	     <item >No</item>
+	 </string-array>
 </resources>

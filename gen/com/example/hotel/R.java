@@ -10,6 +10,7 @@ package com.example.hotel;
 public final class R {
     public static final class array {
         public static final int array_rate=0x7f060000;
+        public static final int dialog_options=0x7f060001;
     }
     public static final class attr {
     }
@@ -34,6 +35,7 @@ public final class R {
         public static final int rating_not_important_1=0x7f020006;
     }
     public static final class id {
+        public static final int action_dialog=0x7f090004;
         public static final int action_fav=0x7f090002;
         public static final int action_share=0x7f090003;
         public static final int img_header=0x7f090000;

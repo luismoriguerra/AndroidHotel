@@ -1,6 +1,10 @@
 package com.example.hotel;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -11,7 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity  implements SendDataDialogFragment.DialogListener{
 	
 	private boolean favorite  = false;
 	
@@ -22,7 +26,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); 
     }
 
 
@@ -72,6 +76,11 @@ public class MainActivity extends Activity {
 			startActivity(Intent.createChooser(share, "Compartir"));
 			
 			return true;
+		
+		case R.id.action_dialog:
+			SendDataDialogFragment f = new SendDataDialogFragment();
+			f.show(getFragmentManager(), "dialogo");
+			return true;
 
 		default:
 			return super.onOptionsItemSelected(item);
@@ -79,4 +88,65 @@ public class MainActivity extends Activity {
     	
         
     }
+
+	@Override
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		// TODO Auto-generated method stub
+		Log.e("TAG", "puso si");
+		
+	}
+
+	@Override
+	public void onDialogNegativeClick(DialogFragment dialog) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+    
+    
+    
+}
+
+class SendDataDialogFragment extends DialogFragment{
+	
+	public interface DialogListener{
+		public void onDialogPositiveClick(DialogFragment dialog);
+		public void onDialogNegativeClick(DialogFragment dialog);
+	}
+	DialogListener listener;
+	@Override
+	public void onAttach(Activity activity) {
+		// TODO Auto-generated method stub
+		super.onAttach(activity);
+		
+		try {
+			listener = (DialogListener)activity;
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+		}
+		
+	}
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+			
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setTitle("Title")
+		.setSingleChoiceItems(R.array.dialog_options, -1, null)
+		.setPositiveButton(R.string.msg_yes, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				listener.onDialogPositiveClick(SendDataDialogFragment.this);
+			}
+		});
+		
+		return builder.create();
+		
+	}
+	
+	
+	
 }
