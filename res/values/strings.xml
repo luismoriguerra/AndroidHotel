@@ -3,6 +3,7 @@
 
     <string name="app_name">Hotel</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="action_fav">Favorito</string>
+    <string name="action_share">Compartir</string>
+	 <string name="msg_share">Te comparto esta habitacion que me gusto</string>
 </resources>
