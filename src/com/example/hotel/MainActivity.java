@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
 			Uri img_res = Uri.parse("android.resource://"+ getPackageName() +
 					"/drawable/" + R.drawable.hotel1_1);
 			share.putExtra(Intent.EXTRA_STREAM, img_res);
+			
 			share.setType("image/jpeg");
 			startActivity(Intent.createChooser(share, "Compartir"));
 			

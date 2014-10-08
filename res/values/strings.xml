@@ -6,4 +6,9 @@
     <string name="action_fav">Favorito</string>
     <string name="action_share">Compartir</string>
 	 <string name="msg_share">Te comparto esta habitacion que me gusto</string>
+	 <string name="msg_rate">Dejanos tu calificacion</string>
+	 <string-array name="array_rate">
+	     <item >Buenos</item>
+	     <item >Malo</item>
+	 </string-array>
 </resources>
